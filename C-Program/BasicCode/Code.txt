@@ -1,0 +1,45 @@
+1. Code of [ Factorial ]  :
+
+#include <stdio.h>
+int main()
+{
+    int num, fact=1;
+    printf("Enter any number : ");
+    scanf("%d",&num);
+    for(int i=1; i<=num; i++)
+    {
+        fact=fact*i;
+    }
+    printf("Factorial of %d is %d",num,fact);
+    return 0;
+}
+
+2. Code of [ Prime Number ]  :
+
+#include <stdio.h>
+int main()
+{
+    int num, count=0;
+    printf("Enter any number : ");
+    scanf("%d",&num);
+    for(int i=2; i<num; i++)
+    {
+        if(num%i==0)
+        {
+            count++;
+            break;
+        }
+    }
+    if(count==0)
+        printf("Prime Number\n");
+    else
+        printf("Not Prime Number\n");
+    return 0;
+}
+
+3. Code of [ GCD ]  :
+
+
+
+
+
