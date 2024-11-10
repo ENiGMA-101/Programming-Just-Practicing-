@@ -1,0 +1,5 @@
+Tasks to do: 
+
+1. Insert in the beginning
+2. Insert at the end
+3. Insert in the middle of a singly linked list
