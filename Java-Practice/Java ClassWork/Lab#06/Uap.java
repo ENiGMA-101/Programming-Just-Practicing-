@@ -1,62 +1,90 @@
 import uap.cse.UapCse;
-import javax.swing.JOptionPane;
+import java.util.*;
+public class Uap 
+{
+    public static void main(String[] args) 
+    {
+        Scanner scan = new Scanner(System.in);
+        UapCse myUap = new UapCse("UAP CSE");
 
-public class Uap {
-    public static void main(String[] args) {
-        UapCse myUap = new UapCse("CSE");
-        
-        while(true) {
-            String menu = "Input '1' to add a new Employee\n" +
-                         "Input '2' to get Salary info\n" +
-                         "Input '3' to increase salary\n" +
-                         "Input '4' to promote Employee\n" +
-                         "Input '5' to display specific Employee\n" +
-                         "Input '6' to display all Employees\n" +
-                         "Input '0' to exit";
-            
-            String choice = JOptionPane.showInputDialog(menu);
-            
-            if(choice == null || choice.equals("0")) {
-                break;
-            }
-            
-            switch(choice) {
-                case "1":
-                    String name = JOptionPane.showInputDialog("Enter employee name:");
-                    String id = JOptionPane.showInputDialog("Enter employee ID:");
-                    String designation = JOptionPane.showInputDialog("Enter designation:");
-                    double salary = Double.parseDouble(JOptionPane.showInputDialog("Enter salary:"));
+        while (true) 
+        {
+        	System.out.println();
+            System.out.println("-- UAP CSE Department --");
+            System.out.println("1. Add a New Employee");
+            System.out.println("2. Get Salary info of a specific Employee");
+            System.out.println("3. Increase the Salary of an Employee");
+            System.out.println("4. Promote an Employee");
+            System.out.println("5. Display the details of a specific Employee");
+            System.out.println("6. Display the list of Employees");
+            System.out.println("0. Exit");
+            System.out.println();
+            System.out.print("Enter your choice: ");
+            int choice = scan.nextInt();
+            scan.nextLine();
+
+            switch (choice) 
+            {
+                case 1:
+                    System.out.print("Enter Employee name: ");
+                    String name = scan.nextLine();
+                    System.out.print("Enter Employee ID: ");
+                    String id = scan.nextLine();
+                    System.out.print("Enter Designation: ");
+                    String designation = scan.nextLine();
+                    System.out.print("Enter Salary: ");
+                    double salary = scan.nextDouble();
+                    scan.nextLine();
                     myUap.addNewEmployee(name, id, designation, salary);
                     break;
-                    
-                case "2":
-                    id = JOptionPane.showInputDialog("Enter employee ID:");
+
+                case 2:
+                    System.out.print("Enter Employee ID: ");
+                    id = scan.nextLine();
                     double empSalary = myUap.getSalary(id);
-                    JOptionPane.showMessageDialog(null, "Salary: " + empSalary);
+                    if (empSalary != -1)
+                        System.out.println("Salary of Employee " + id + ": " + empSalary);
                     break;
-                    
-                case "3":
-                    id = JOptionPane.showInputDialog("Enter employee ID:");
-                    double amount = Double.parseDouble(JOptionPane.showInputDialog("Enter amount to increase:"));
-                    myUap.increaseSalary(id, amount);
+
+                case 3:
+                    System.out.print("Enter Employee ID: ");
+                    id = scan.nextLine();
+                    System.out.print("Enter the amount to increase salary by: ");
+                    double amt = scan.nextDouble();
+                    scan.nextLine();
+                    myUap.increaseSalary(id, amt);
                     break;
-                    
-                case "4":
-                    id = JOptionPane.showInputDialog("Enter employee ID:");
-                    String newDesignation = JOptionPane.showInputDialog("Enter new designation:");
-                    double newSalary = Double.parseDouble(JOptionPane.showInputDialog("Enter new salary:"));
-                    myUap.promote(id, newDesignation, newSalary);
+
+                case 4:
+                    System.out.print("Enter Employee ID: ");
+                    id = scan.nextLine();
+                    System.out.print("Enter new designation: ");
+                    designation = scan.nextLine();
+                    System.out.print("Enter new salary: ");
+                    salary = scan.nextDouble();
+                    scan.nextLine();
+                    myUap.promote(id, designation, salary);
                     break;
-                    
-                case "5":
-                    id = JOptionPane.showInputDialog("Enter employee ID:");
+
+                case 5:
+                    System.out.print("Enter Employee ID: ");
+                    id = scan.nextLine();
                     myUap.display(id);
                     break;
-                    
-                case "6":
+
+                case 6:
                     myUap.display();
                     break;
+
+                case 0:
+                    System.out.println("Exiting the system...");
+                    scan.close();
+                    return;
+
+                default:
+                    System.out.println("Invalid choice. Please try again..");
             }
         }
     }
 }
+

@@ -27,4 +27,13 @@ public class Employee
     {
         return "Name:" + name + "; Id:" + id + "; Designation:" + designation + "; Salary:" + salary;
     }
+    public String getName() 
+    {
+        return name;
+    }
+
+    public String getId() 
+    {
+        return id;
+    }
 }
