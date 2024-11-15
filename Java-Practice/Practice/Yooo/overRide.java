@@ -8,6 +8,7 @@ class A
 
 class B extends A
 {
+    @Override
     public void display()
     {
         System.out.println("in B");
@@ -18,7 +19,10 @@ public class overRide
 {
     public static void main(String[] args) 
     {
-        A obj = new A();
+        B obj = new B();
         obj.display();    
+
+        A obj1 = new B();
+        obj1.display();
     }
 }
