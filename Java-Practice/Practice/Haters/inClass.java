@@ -1,5 +1,3 @@
-package Yooo;
-
 class A 
 {
     public void show()
@@ -16,7 +14,7 @@ class A
     }
 }
 
-public class innerClass
+public class inClass
 {
     public static void main(String[] args) 
     {
