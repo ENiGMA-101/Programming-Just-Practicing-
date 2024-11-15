@@ -8,4 +8,8 @@ public class Calc
     {
         return num1-num2;
     }
+    public void display(int result)
+    {
+        System.out.println("Result = "+result);
+    }
 }
