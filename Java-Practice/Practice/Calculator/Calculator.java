@@ -1,40 +1,62 @@
-import java.util.*;
+import java.util.Scanner;
 public class Calculator 
 {
     public static void main(String[] args) 
     {
         AdvanceCalc calculator = new AdvanceCalc();
         Scanner scan = new Scanner(System.in);
-
-        System.out.print("Enter two numbers to sum: ");
-        int num1 = scan.nextInt();
-        int num2 = scan.nextInt();
-        int sum = calculator.sum(num1, num2);
-        calculator.display(sum);
-
-        System.out.print("Enter two numbers to subtract: ");
-        int num3 = scan.nextInt();
-        int num4 = scan.nextInt();
-        int difference = calculator.sub(num3, num4);
-        calculator.display(difference);
-
-        System.out.print("Enter two numbers to multiply: ");
-        int num5 = scan.nextInt();
-        int num6 = scan.nextInt();
-        int product = calculator.multi(num5, num6);
-        calculator.display(product);
-
-        System.out.print("Enter two numbers to divide : ");
-        int num7 = scan.nextInt();
-        int num8 = scan.nextInt();
-        try 
+        boolean continueCalculation = true;
+        while (continueCalculation) 
         {
-            int quotient = calculator.div(num7, num8);
-            calculator.display(quotient);
-        } 
-        catch (ArithmeticException e) 
-        {
-            System.out.println("Error: Division by zero is not allowed.");
+            System.out.println("\nChoose an operation:");
+            System.out.println("1. Sum");
+            System.out.println("2. Subtract");
+            System.out.println("3. Multiply");
+            System.out.println("4. Divide");
+            System.out.println("5. Quit");
+            System.out.print("Enter your choice: ");
+            int choice = scan.nextInt();
+            if (choice == 5) 
+            {
+                // continueCalculation = false;
+                System.out.println("Exiting calculator...");
+                break;
+            }
+            else
+            {
+                System.out.print("Enter 1st number : ");
+                int num1 = scan.nextInt();
+                System.out.print("Enter 2nd number : ");
+                int num2 = scan.nextInt();
+                switch (choice) 
+                {
+                    case 1:
+                        int sum = calculator.sum(num1, num2);
+                        calculator.display(sum);
+                        break;
+                    case 2:
+                        int sub = calculator.sub(num1, num2);
+                        calculator.display(sub);
+                        break;
+                    case 3:
+                        int multi = calculator.multi(num1, num2);
+                        calculator.display(multi);
+                        break;
+                    case 4:
+                        try 
+                        {
+                            int div = calculator.div(num1, num2);
+                            calculator.display(div);
+                        } 
+                        catch (ArithmeticException e) 
+                        {
+                            System.out.println("Error: Division by zero is not allowed.");
+                        }
+                        break;
+                    default:
+                        System.out.println("Invalid choice. Please try again.");
+                }
+            }
         }
         scan.close();
     }
