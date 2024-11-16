@@ -1,6 +1,6 @@
 package beginnerjava;
 import java.util.Scanner;
-public class Assignment16 
+class Assignment16 
 {
     public static void main(String[] args) 
     {

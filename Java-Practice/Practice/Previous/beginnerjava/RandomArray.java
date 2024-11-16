@@ -1,5 +1,6 @@
+package beginnerjava;
 import java.util.Random;
-public class RandomArray 
+class RandomArray 
 {
     public static void main(String[] args) {
         int[] numbers = new int[5];
