@@ -1,39 +1,45 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct node {
+struct node 
+{
     int data;
     struct node* next;
 };
-
 struct node* head = NULL;
 
-void addFirst(int value) {
-    struct node* new = (struct node*)malloc(sizeof(struct node));
+void addFirst(int value) 
+{
+    struct node* new = malloc(sizeof(struct node));
     new->data = value;
     new->next = head;
     head = new;
 }
 
-void addLast(int value) {
-    struct node* new = (struct node*)malloc(sizeof(struct node));
+void addLast(int value) 
+{
+    struct node* new = malloc(sizeof(struct node));
     new->data = value;
     new->next = NULL;
 
-    if (head == NULL) {
+    if (head == NULL)
         head = new;
-    } else {
+    else 
+    {
         struct node* last = head;
-        while (last->next != NULL) {
+        while (last->next != NULL) 
+        {
             last = last->next;
         }
         last->next = new;
     }
 }
 
-void display() {
+void display() 
+{
     struct node* temp = head;
-    while (temp != NULL) {
+    while (temp != NULL) 
+    {
         printf("%d %d\n",temp ->data,temp->next);
         temp = temp->next;
     }
@@ -50,6 +56,7 @@ int main()
         printf("2. Add a node to the end\n");
         printf("3. Display the list\n");
         printf("4. Exit\n");
+        printf("Enter your choice : ");
         scanf("%d", &choice);
         switch (choice) 
         {
