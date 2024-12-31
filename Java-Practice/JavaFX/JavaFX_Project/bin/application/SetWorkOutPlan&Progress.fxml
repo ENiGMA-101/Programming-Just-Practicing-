@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <children>
+      <Label alignment="CENTER" layoutX="189.0" layoutY="47.0" prefHeight="27.0" prefWidth="221.0" style="-fx-background-color: skyblue;" text="Workout Plan">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="48.0" layoutY="35.0" mnemonicParsing="false" onAction="#TrainerMenu" text="Menu" />
+      <Button layoutX="517.0" layoutY="35.0" mnemonicParsing="false" onAction="#Logout" style="-fx-background-color: red;" text="Log out" />
+      <Label alignment="CENTER" layoutX="107.0" layoutY="105.0" prefHeight="25.0" prefWidth="97.0" text="Trainee Id">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="188.0" layoutY="156.0" prefHeight="26.0" prefWidth="222.0" style="-fx-background-color: lightblue;" text="Set Workout">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="workoutid" alignment="CENTER" layoutX="224.0" layoutY="104.0" prefHeight="26.0" prefWidth="172.0" promptText="Enter Id" style="-fx-background-color: lightgray;" />
+      <TextField fx:id="workOutNameTrainer" alignment="CENTER" layoutX="118.0" layoutY="199.0" prefHeight="26.0" prefWidth="172.0" promptText="Enter Name" style="-fx-background-color: lightgray;" />
+      <Button layoutX="249.0" layoutY="290.0" mnemonicParsing="false" onAction="#saveWorkout" style="-fx-background-color: lightgreen;" text="Save" />
+      <Label alignment="CENTER" layoutX="45.0" layoutY="247.0" prefHeight="25.0" prefWidth="54.0" text="Item">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="workOutTypeTrainer" alignment="CENTER" layoutX="118.0" layoutY="246.0" prefHeight="26.0" prefWidth="172.0" promptText="Add Item" style="-fx-background-color: lightgray;" />
+      <Label alignment="CENTER" layoutX="45.0" layoutY="199.0" prefHeight="26.0" prefWidth="54.0" text="Name">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="411.0" layoutY="105.0" mnemonicParsing="false" onAction="#search" style="-fx-background-color: lightgreen;" text="Search" />
+      <ListView fx:id="workOutListViewTrainer" layoutX="343.0" layoutY="191.0" prefHeight="142.0" prefWidth="237.0" style="-fx-background-color: lightgray;" />
+      <Button layoutX="538.0" layoutY="339.0" mnemonicParsing="false" onAction="#WorkoutPlanTrainer" style="-fx-background-color: lightgreen;" text="View" />
+   </children>
+</AnchorPane>

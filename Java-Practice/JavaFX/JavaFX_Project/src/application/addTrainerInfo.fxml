@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <children>
+      <Label layoutX="45.0" layoutY="146.0" text="Name" />
+      <Label layoutX="41.0" layoutY="179.0" text="Age" />
+      <Label layoutX="41.0" layoutY="213.0" text="Weight" />
+      <Label layoutX="42.0" layoutY="251.0" text="Height" />
+      <Label layoutX="43.0" layoutY="284.0" text="Year of Experience" />
+      <Label layoutX="45.0" layoutY="78.0" style="-fx-background-color: orange;" text="Add Trainer Info">
+         <font>
+            <Font size="19.0" />
+         </font></Label>
+      <TextField fx:id="TrainerName" layoutX="150.0" layoutY="142.0" />
+      <TextField fx:id="TrainerAge" layoutX="150.0" layoutY="175.0" />
+      <TextField fx:id="TrainerWeight" layoutX="150.0" layoutY="209.0" />
+      <TextField fx:id="TrainerHeight" layoutX="150.0" layoutY="247.0" />
+      <TextField fx:id="TrainerExperience" layoutX="150.0" layoutY="280.0" />
+      <Button layoutX="268.0" layoutY="324.0" mnemonicParsing="false" onAction="#addTrainer" text="Add" />
+      <Button layoutX="504.0" layoutY="337.0" mnemonicParsing="false" onAction="#showTrainer" text="View" />
+      <Button layoutX="38.0" layoutY="28.0" mnemonicParsing="false" onAction="#AdminMenu" text="Menu" />
+      <Button layoutX="525.0" layoutY="28.0" mnemonicParsing="false" onAction="#Logout" style="-fx-background-color: red;" text="log out" />
+      <Label layoutX="346.0" layoutY="78.0" style="-fx-background-color: orange;" text="View Trainer Info">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <ListView fx:id="fitness" layoutX="346.0" layoutY="122.0" prefHeight="200.0" prefWidth="200.0" />
+   </children>
+</AnchorPane>

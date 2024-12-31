@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <children>
+      <Button layoutX="521.0" layoutY="36.0" mnemonicParsing="false" onAction="#Logout" style="-fx-background-color: red;" text="Logout" />
+      <ListView fx:id="workOutListView" layoutX="85.0" layoutY="118.0" prefHeight="209.0" prefWidth="430.0" style="-fx-background-color: lightgray;" />
+      <Button layoutX="54.0" layoutY="36.0" mnemonicParsing="false" onAction="#TraineeMenu" style="-fx-background-color: orange;" text="Menu" />
+      <Label alignment="CENTER" layoutX="214.0" layoutY="68.0" prefHeight="27.0" prefWidth="172.0" style="-fx-background-color: skyblue;" text="Trainee Details" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="470.0" layoutY="342.0" mnemonicParsing="false" onAction="#workoutProgress" text="Show" />
+   </children>
+</AnchorPane>
